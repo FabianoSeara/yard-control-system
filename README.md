@@ -1,73 +1,62 @@
-# 📦 Sistema de Controle de Pátio de Contêineres
+# Container Yard Control System
 
-Sistema de linha de comando (CLI) para gerenciar a movimentação e o
-armazenamento de contêineres em um pátio portuário: cadastro, busca,
-atualização de status, movimentação entre posições e estatísticas de
-ocupação.
+Command-line interface (CLI) system to manage container movement and storage in a port yard: registration, search, status updates, movement between positions, and occupancy statistics.
 
-Este projeto nasceu da minha experiência prática em terminais portuários,
-onde já geri controles de pátio manualmente em planilhas. A proposta aqui
-foi recriar esse processo como uma aplicação real, aplicando lógica de
-programação e banco de dados.
+This project was born from my practical experience in port terminals, where I have managed yard controls manually in spreadsheets. The goal here was to recreate this process as a real application, applying programming logic and databases.
 
-## Funcionalidades
+## Features
 
-- Cadastro de contêineres (número, tipo, cliente/navio, posição no pátio)
-- Listagem com filtro por status
-- Busca por número do contêiner
-- Atualização de status (Aguardando → Armazenado → Em Trânsito → Carregado/Saída)
-- Movimentação entre bloco/fileira/andar
-- Estatísticas: total de contêineres, distribuição por status e ocupação por bloco
+- **Container registration:** number, type, client/vessel, and yard position.
+- **Listing:** with filter by status.
+- **Search:** by container number.
+- **Status update:** (Waiting → Stored → In Transit → Loaded/Departed).
+- **Movement:** between block/row/tier.
+- **Statistics:** total containers, distribution by status, and occupancy per block.
 
-## Tecnologias
+## Technologies
 
-- **Python 3** (sem dependências externas)
-- **SQLite** (banco de dados local, via módulo `sqlite3` da biblioteca padrão)
+- Python 3 (no external dependencies)
+- SQLite (local database via the standard library `sqlite3` module)
 
-## Estrutura do projeto
+## Project Structure
 
-```
-patio-conteineres/
- main.py          # Menu do terminal (interação com o usuário)
- operacoes.py      # Regras de negócio (cadastrar, buscar, atualizar...)
- database.py        # Conexão e criação da tabela no SQLite
- README.md
-```
+```text
+container-yard-system/
+├── main.py         # Terminal menu (user interaction)
+├── operacoes.py    # Business logic (register, search, update...)
+├── database.py     # SQLite connection and table creation
+└── README.md
 
-## Como rodar
+## How to Run
 
-Não precisa instalar nenhuma dependência — só Python 3.
+No dependencies to install - just Python 3.
 
-```bash
-git clone https://github.com/FabianoSeara/patio-conteineres.git
-cd patio-conteineres
-python3 main.py
-```
+git clone https://github.com/FabianoSeara/container-yard-system.git
+cd container-yard-system
+python main.py
 
-O banco de dados (`patio.db`) é criado automaticamente na primeira execução.
+The database (patio.db) is created automatically on the first run.
 
-## Exemplo de uso
+## Example Usage
 
-```
 ==================================================
-   SISTEMA DE CONTROLE DE PÁTIO DE CONTÊINERES
+   CONTAINER YARD CONTROL SYSTEM
 ==================================================
-1. Cadastrar novo container
-2. Listar containers
-3. Buscar container por número
-4. Atualizar status de um container
-5. Mover container (bloco/fileira/andar)
-6. Estatísticas do pátio
-0. Sair
+1. Register new container
+2. List containers
+3. Search container by number
+4. Update container status
+5. Move container (block/row/tier)
+6. Yard statistics
+0. Exit
 ==================================================
-```
 
-## Próximos passos
+## Next Steps
 
-- [ ] Exportar relatórios em CSV
-- [ ] Adicionar histórico de movimentações por contêiner
-- [ ] Interface web (Flask) como evolução do projeto
+- [ ] Export reports to CVS
+- [ ] Add movement history per container
+- [ ] IWeb interface (Flask) as a project evolution
 
 ---
 
-Projeto desenvolvido por [Fabiano Seára](https://github.com/FabianoSeara) como parte do meu portfólio de transição de carreira para desenvolvimento de software.
+Project deloped by [Fabiano Seára](https://github.com/FabianoSeara) part of my portfólio for transitioning to a software development career.
